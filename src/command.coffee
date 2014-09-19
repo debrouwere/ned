@@ -61,7 +61,11 @@ program
     .option '-t --tail', 
         'Alias to limit on the reversed dataset.'
     .option '-v, --valid <schema>',
-        'Passes JSON schema validation'
+        'Filter out objects that do not pass JSON schema validation.'
+    .option '-V --all-valid <schema>', 
+        'Each object must pass JSON schema validation, otherwise an error is produced.'
+    .option '-E, --early', 
+        'Validate before applying any filters, rather than validating the results.'
     .option '-I, --indent', 
         'Indented JSON.'
     .parse process.argv
